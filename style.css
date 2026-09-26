@@ -254,7 +254,7 @@ body {
   max-width: 1150px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr auto 1.25fr;
+  grid-template-columns: 1.25fr auto 1fr; /* Swapped: wider column on left for text */
   align-items: center;
   gap: 3.5rem;
 }
@@ -289,7 +289,7 @@ body {
 .robomaster-title {
   font-size: clamp(2rem, 3.5vw, 2.75rem);
   font-weight: 800;
-  color: var(--accent-vivid); /* Vivid red heading as shown in reference */
+  color: var(--accent-vivid);
   line-height: 1.15;
   margin-bottom: 0.5rem;
 }
@@ -392,11 +392,331 @@ h1.page-title {
   background: #000000;
 }
 
-.footer {
+/* =========================================
+   FOUR-LAYER 50/50 ALTERNATING SHOWCASE
+   ========================================= */
+.split-showcase-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+}
+
+.split-row {
+  display: flex;
+  width: 100%;
+  min-height: 400px;
+  max-height: 400px;  
+  align-items: stretch;
+}
+
+/* Reverses alternating rows: text on left, image on right */
+.split-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* 50% / 50% Column Widths */
+.split-col {
+  flex: 0 0 50%;
+  width: 50%;
+  display: flex;
+  position: relative;
+}
+
+/* Image Box - Seamless edge-to-edge fitting */
+.split-image-col {
+  overflow: hidden;
+  background-color: #0f1115;
+}
+
+.split-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text Box - White background, black centered typography */
+.split-text-col {
+  background-color: #FFFFFF;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem 8%;
+}
+
+.split-text-inner {
+  max-width: 520px;
+  width: 100%;
   text-align: center;
-  padding: 2rem;
-  border-top: 1px solid var(--border);
-  color: var(--text-muted);
+}
+
+.split-title {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+
+.split-desc {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.8;
+  color: #000000;
+  font-weight: 400;
+}
+
+/* Responsive Stacking for Tablets & Mobile */
+@media (max-width: 860px) {
+  .split-row,
+  .split-row.reverse {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .split-col {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+
+  .split-image-col {
+    height: 320px;
+  }
+
+  .split-text-col {
+    padding: 3.5rem 1.75rem;
+  }
+}
+
+/* =========================================
+   JOIN US PAGE HERO
+   ========================================= */
+.join-hero-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 85px);
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Replace URL with 'images/your-team-photo.jpg' when ready */
+  background-image: url('https://placehold.co/1920x1080/1a202c/ffffff?text=Ascension+Team+Photo');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Dark translucent overlay for crisp text readability */
+.join-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 25, 0.62);
+  z-index: 1;
+}
+
+.join-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.join-hero-title {
+  font-size: clamp(2.75rem, 6.5vw, 5rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.6);
+}
+
+.join-hero-subtitle {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: #e2e8f0;
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Pill-shaped Green Apply Button matching reference */
+.btn-apply {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background-color: #000000; /* Vibrant emerald green from reference */
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.85rem 2.75rem;
+  border-radius: 50px;       /* Pill shape */
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 4px 14px rgba(255, 0, 0, 0.15);
+}
+
+.btn-apply:hover {
+  background-color: #F13223; /* Slightly lighter red on hover */
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   DARK FOOTER (WHITE TEXT + SOCIAL ICONS)
+   ========================================= */
+.site-footer {
+  width: 100%;
+  background-color: #0e1013;
+  color: #FFFFFF;
+  padding: 4.5rem 8% 2.5rem;
+  border-top: 1px solid #1e2229;
+}
+
+.footer-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Left: Address & Email */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-address {
+  color: #FFFFFF;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.footer-email a {
+  color: #FFFFFF;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-email a:hover {
+  color: var(--accent-pale);
+}
+
+/* Right: Social Media Icons */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #FFFFFF;
+  transition: fill 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+}
+
+.social-icon:hover svg {
+  fill: var(--accent-vivid); /* Turns vivid red on hover */
+}
+
+/* Bottom: Centered Copyright */
+.footer-bottom {
+  max-width: 1150px;
+  margin: 0 auto;
+  border-top: 1px solid #1c2026;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #a1a1aa;
   font-size: 0.85rem;
-  background: var(--bg);
+  letter-spacing: 0.02em;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* =========================================
+   THIN FLEET BANNER (OUR ROBOTS PAGE)
+   ========================================= */
+.fleet-banner {
+  position: relative;
+  width: 100%;
+  height: clamp(200px, 26vh, 260px); /* Letterbox style, thinner than hero sections */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Replace with your robot lineup image (e.g. 'images/fleet-banner.jpg') */
+  background-image: url('https://placehold.co/1920x600/111418/ffffff?text=Robots+Fleet+Banner');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Darkened overlay for high-contrast text legibility */
+.fleet-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+
+.fleet-banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1.5rem;
+}
+
+/* Centered White "OUR FLEET" Title */
+.fleet-banner-title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85);
 }
