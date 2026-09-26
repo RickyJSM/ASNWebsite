@@ -1,0 +1,246 @@
+:root {
+  --bg: #FFFFFF;
+  --bg-card: #f9fafb;
+  --bg-card-hover: #f3f4f6;
+  --text-main: #000000;
+  --text-muted: #52525b;
+  --accent-vivid: #F13223;
+  --accent-pale: #FA6559;
+  --border: #e4e4e7;
+  --radius: 0px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Tab Navigation Bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 8%;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  max-width: 170px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Square & Wide Tabs (Now Anchor Links) */
+.tabs-container {
+  display: flex;
+  background: var(--bg-card);
+  padding: 4px;
+  border-radius: 0;
+  border: 1px solid var(--border);
+  gap: 4px;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.65rem 1.6rem;
+  min-width: 110px;
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.tab-btn.active {
+  background: var(--text-main);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tab-btn.active:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Main Content Wrapper */
+.content-wrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overview / Home Hero Section */
+.hero-gif-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 85px);
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e0/5R_robot.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+}
+
+.giant-hero-title {
+  font-size: clamp(3rem, 8.5vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 0;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);
+}
+
+.giant-hero-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+
+/* Page Inner Layout */
+.inner-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem 4rem;
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-vivid);
+  background: rgba(250, 101, 89, 0.12);
+  border: 1px solid var(--accent-pale);
+  border-radius: 0;
+  margin-bottom: 1.25rem;
+}
+
+h1.page-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.lead {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.capability-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.capability-item, .info-box, .contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.capability-item:hover, .info-box:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-pale);
+}
+
+.capability-item h3, .info-box h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.capability-item p, .info-box p, .contact-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  background: var(--accent-vivid);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background: #000000;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  background: var(--bg);
+}
