@@ -13,7 +13,7 @@
     />
   </head>
   <body>
-    <!-- Top Header & Navigation -->
+    <!-- Top Header & Brand -->
     <header class="top-nav">
       <a href="index.html" class="logo-container">
         <img src="images/asnBlackLogo.png" alt="ASN Logo" class="logo-img" />
@@ -28,7 +28,7 @@
     </header>
 
     <main class="content-wrapper">
-      <!-- Giant GIF Hero Section -->
+      <!-- 1. Giant GIF Hero Section -->
       <section class="hero-gif-container">
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -39,8 +39,17 @@
         </div>
       </section>
 
-      <!-- Our Mission Section (Full width, ~30vh, White Background, Black Font) -->
+      <!-- 2. Our Mission Section with Flanking Arrowheads -->
       <section class="mission-section">
+        <!-- Left Arrowhead (Pointing Inward / Right) -->
+        <svg
+          class="mission-arrow mission-arrow-left"
+          viewBox="0 0 100 140"
+          aria-hidden="true"
+        >
+          <path d="M 15 10 L 85 70 L 15 130 L 48 70 Z" />
+        </svg>
+
         <div class="mission-container">
           <h2 class="mission-title">Our Mission</h2>
           <p class="mission-desc">
@@ -48,6 +57,52 @@
             rover platforms and autonomous robotics systems to compete at
             premier international robotics challenges each year.
           </p>
+        </div>
+
+        <!-- Right Arrowhead (Pointing Inward / Left) -->
+        <svg
+          class="mission-arrow mission-arrow-right"
+          viewBox="0 0 100 140"
+          aria-hidden="true"
+        >
+          <path d="M 85 10 L 15 70 L 85 130 L 52 70 Z" />
+        </svg>
+      </section>
+
+      <!-- 3. What is RoboMaster Section (Black Background, White Text, No Button) -->
+      <section class="robomaster-section">
+        <div class="robomaster-container">
+          <!-- Left: Team & Robot Image -->
+          <div class="robomaster-image-wrapper">
+            <!-- Swap src with 'images/robomaster-team.jpg' when your image is ready -->
+            <img
+              src="https://placehold.co/600x420/181b22/ffffff?text=RoboMaster+Team+Photo"
+              alt="SFU Ascension RoboMaster Team"
+              class="robomaster-img"
+            />
+          </div>
+
+          <!-- Middle: Red Accent Line Divider -->
+          <div class="robomaster-divider"></div>
+
+          <!-- Right: RoboMaster Overview Copy -->
+          <div class="robomaster-text">
+            <h2 class="robomaster-title">What is RoboMaster?</h2>
+            <p>
+              RoboMaster is a robotics competition that blends engineering,
+              programming, and competitive gameplay. Teams design, build, and
+              program custom robots that engage in dynamic battles on a
+              specialized battlefield. The objective is to score points by
+              firing projectiles at opponent robots and designated targets while
+              protecting their own base.
+            </p>
+            <p>
+              At Ascension Robotics, we combine expertise in mechanical design,
+              electronics, and software development to engineer robots for the
+              RoboMaster competition. Join us as we shape an exciting future for
+              our team!
+            </p>
+          </div>
         </div>
       </section>
     </main>

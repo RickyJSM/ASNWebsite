@@ -161,6 +161,7 @@ body {
    OUR MISSION SECTION (HOME PAGE)
    ========================================= */
 .mission-section {
+  position: relative;
   width: 100%;
   min-height: 30vh;
   background-color: #FFFFFF;
@@ -170,9 +171,35 @@ body {
   justify-content: center;
   padding: 4.5rem 8%;
   border-bottom: 1px solid var(--border);
+  overflow: hidden; /* Prevents arrows from overflowing viewport edges */
+}
+
+/* Stylistic Arrowhead SVGs */
+.mission-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: clamp(90px, 15vw, 160px);
+  width: auto;
+  fill: #000000;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-linejoin: round; /* Matches the soft rounded bevels of your reference */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mission-arrow-left {
+  left: clamp(1.5rem, 5vw, 5rem);
+}
+
+.mission-arrow-right {
+  right: clamp(1.5rem, 5vw, 5rem);
 }
 
 .mission-container {
+  position: relative;
+  z-index: 2; /* Keeps text layered cleanly above arrowheads */
   max-width: 820px;
   width: 100%;
   text-align: center;
@@ -180,15 +207,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.mission-desc {
-  font-size: clamp(1rem, 1.35vw, 1.15rem);
-  line-height: 1.75;
-  color: #000000;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-  max-width: 720px;
+  padding: 0 1rem;
 }
 
 .mission-title {
@@ -198,6 +217,101 @@ body {
   color: #000000;
   letter-spacing: -0.01em;
   margin: 0.25rem 0 1rem;
+}
+
+.mission-desc {
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.75;
+  color: #000000;
+  font-weight: 400;
+  margin-bottom: 0;
+  max-width: 720px;
+}
+
+/* Mobile Screen Adjustment */
+@media (max-width: 768px) {
+  .mission-arrow {
+    opacity: 0.12; /* Fades arrows to subtle watermarks so text remains legible */
+    height: 110px;
+  }
+}
+
+/* =========================================
+   WHAT IS ROBOMASTER SECTION
+   ========================================= */
+.robomaster-section {
+  width: 100%;
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 6rem 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.robomaster-container {
+  max-width: 1150px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1.25fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* Image Column */
+.robomaster-image-wrapper {
+  width: 100%;
+}
+
+.robomaster-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border: 1px solid #27272a;
+}
+
+/* Vertical Red Accent Divider */
+.robomaster-divider {
+  width: 3px;
+  align-self: stretch;
+  background-color: var(--accent-vivid);
+}
+
+/* Text Content Column */
+.robomaster-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.robomaster-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--accent-vivid); /* Vivid red heading as shown in reference */
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.robomaster-text p {
+  color: #f4f4f5;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.75;
+}
+
+/* Responsive Collapse for Tablets and Mobile */
+@media (max-width: 900px) {
+  .robomaster-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .robomaster-divider {
+    width: 60px;
+    height: 3px;
+    align-self: flex-start;
+  }
 }
 
 /* Page Inner Layout */
