@@ -21,7 +21,7 @@
       <nav class="tabs-container">
         <a href="index.html" class="tab-btn">Home</a>
         <a href="robots.html" class="tab-btn active">Our Robots</a>
-        <a href="about.html" class="tab-btn">About</a>
+        <a href="team.html" class="tab-btn">Our Team</a>
         <a href="sponsors.html" class="tab-btn">Sponsors</a>
         <a href="contact.html" class="tab-btn">Contact Us</a>
         <a href="join.html" class="tab-btn">Join Us</a>
@@ -37,36 +37,201 @@
         </div>
       </section>
 
-      <!-- Fleet Content Details -->
-      <div class="inner-container">
-        <span class="badge">Robotics Fleet</span>
-        <h2 class="page-title">Our Systems &amp; Rovers</h2>
-        <p class="lead">Core engineering platforms developed by the team.</p>
+      <!-- 6-Robot Fleet Showcase (Text Left, Image Right) -->
+      <section class="fleet-list-section">
+        <div class="fleet-container">
+          <!-- Robot 1: Infantry -->
+          <article class="robot-row">
+            <div class="robot-text-col">
+              <span class="robot-index">01</span>
+              <h2 class="robot-name">Infantry Robot</h2>
+              <p class="robot-desc">
+                The Infantry-class robot is the foundational robot for both the
+                1v1 and 3v3 competition categories. It features a 4-wheel swerve
+                drive allowing it to move at maximum speed in any direction
+                while firing 17mm pellets up to speeds of 90 km/h.
+              </p>
+              <ul class="robot-specs">
+                <li>
+                  <strong>Drive:</strong> Compact X-drive wheel pod design
+                </li>
+                <li>
+                  <strong>Armament:</strong> Refined pogo pin turret connection
+                </li>
+                <li>
+                  <strong>Supercapacitor Bank:</strong> Provides bursts of
+                  energy to chassis when needed
+                </li>
+              </ul>
+            </div>
+            <div class="robot-image-col">
+              <img
+                src="/images/InfantryAndSentry.png"
+                alt="Infantry Robot"
+                class="robot-img"
+              />
+            </div>
+          </article>
 
-        <div class="capability-list">
-          <div class="capability-item">
-            <h3>Mobility &amp; Drive Systems</h3>
-            <p>
-              Rocker-bogie chassis architectures, high-torque brushless drive
-              trains, and off-road obstacle traversal.
-            </p>
-          </div>
-          <div class="capability-item">
-            <h3>Robotic Manipulator</h3>
-            <p>
-              Multi-DOF robotic arms with inverse kinematics, precision
-              end-effectors, and closed-loop control.
-            </p>
-          </div>
-          <div class="capability-item">
-            <h3>Autonomous Navigation</h3>
-            <p>
-              LiDAR SLAM, visual odometry, and real-time obstacle avoidance
-              algorithms running on embedded edge computers.
-            </p>
-          </div>
+          <!-- Robot 2: Hero -->
+          <article class="robot-row">
+            <div class="robot-text-col">
+              <span class="robot-index">02</span>
+              <h2 class="robot-name">Hero Robot</h2>
+              <p class="robot-desc">
+                The Hero bot is the team’s heavy hitter. This robot is the
+                largest on the battlefield and fires 42mm golf balls, screw-fed
+                from our magazine. Despite its large size, its mechanum-driven
+                system allows it to remain agile on the field.
+              </p>
+              <ul class="robot-specs">
+                <li>
+                  <strong>Ball Path:</strong> Gooseneck to reduce ball path
+                  length
+                </li>
+                <li><strong>Indexor:</strong> Aggressively fast corkscrew</li>
+                <li>
+                  <strong>Turret:</strong> Barrel geometry that centers balls in
+                  flywheel assembly
+                </li>
+              </ul>
+            </div>
+            <div class="robot-image-col">
+              <img src="/images/Hero.png" alt="Hero Robot" class="robot-img" />
+            </div>
+          </article>
+
+          <!-- Robot 3: Engineer -->
+          <article class="robot-row">
+            <div class="robot-text-col">
+              <span class="robot-index">03</span>
+              <h2 class="robot-name">Engineer Robot</h2>
+              <p class="robot-desc">
+                The Engineer is a specialized support unit that manipulates
+                field elements to secure strategic resources and provide buffs
+                to our team. To do so, it uses a custom multi-axis robotic arm
+                and controller to coordinate its actuators.
+              </p>
+              <ul class="robot-specs">
+                <li><strong>Mechanism:</strong> 6-DOF serial-link robot arm</li>
+                <li><strong>Drive:</strong> Omni-directional Mecanum drive</li>
+                <li><strong>Grip:</strong> Pneumatic end-effector</li>
+              </ul>
+            </div>
+            <div class="robot-image-col">
+              <img
+                src="/images/Engineer.png"
+                alt="Engineer Robot"
+                class="robot-img"
+              />
+            </div>
+          </article>
+
+          <!-- Robot 4: Sentry -->
+          <article class="robot-row">
+            <div class="robot-text-col">
+              <span class="robot-index">04</span>
+              <h2 class="robot-name">Sentry Robot</h2>
+              <p class="robot-desc">
+                Unlike the other robots, the Sentry is completely autonomous. It
+                integrates LiDAR and computer vision to perceive its
+                environment, fire on targets, and autonomously navigate the
+                battlefield.
+              </p>
+              <ul class="robot-specs">
+                <li>
+                  <strong>Navigation:</strong> Using ROS2 and the Manifold Tech
+                  Odin 1 LIDAR
+                </li>
+                <li>
+                  <strong>Targeting:</strong> Pitch & yaw calculations for
+                  armour panel tracking and aiming
+                </li>
+                <li>
+                  <strong>Algorithms:</strong> Predictive aiming & shooting with
+                  EKF
+                </li>
+              </ul>
+            </div>
+            <div class="robot-image-col">
+              <img
+                src="/images/InfantryAndSentry.png"
+                alt="Sentry Robot"
+                class="robot-img"
+              />
+            </div>
+          </article>
+
+          <!-- Robot 5: Aerial -->
+          <article class="robot-row">
+            <div class="robot-text-col">
+              <span class="robot-index">05</span>
+              <h2 class="robot-name">Aerial Robot</h2>
+              <p class="robot-desc">
+                The Drone is a large quadcopter that flies above the
+                battlefield, supporting the team through aerial reconnaissance
+                and suppressive fire. Our drone’s lightweight carbon-fibre frame
+                offers extended flight times while protecting the rotors from
+                projectiles and impacts.
+              </p>
+              <ul class="robot-specs">
+                <li><strong>Airframe:</strong> X-quadcopter motor layout</li>
+                <li>
+                  <strong>Range:</strong> 10km estimated, 15 min flight tim
+                </li>
+                <li>
+                  <strong>Weight:</strong> 8 kg chassis weight, 16 kg maximum
+                  takeoff weight
+                </li>
+              </ul>
+            </div>
+            <div class="robot-image-col">
+              <img
+                src="/images/Drone.png"
+                alt="Aerial Robot"
+                class="robot-img"
+              />
+            </div>
+          </article>
+
+          <!-- Robot 6: Dart -->
+          <article class="robot-row">
+            <div class="robot-text-col">
+              <span class="robot-index">06</span>
+              <h2 class="robot-name">Dart System</h2>
+              <p class="robot-desc">
+                The Dart System launches high-velocity darts to strike enemy
+                structures, delivering significant damage and temporarily
+                disabling enemy bots. The launcher can rotate horizontally for
+                aiming and adjust launch power with flywheel speed. In addition,
+                mid-air steering is being developed using rudders, elevators,
+                and onboard vision.
+              </p>
+              <ul class="robot-specs">
+                <li>
+                  <strong>Turret:</strong> Quad-flywheel launcher spinning up to
+                  9000 RPM
+                </li>
+                <li>
+                  <strong>Indexor:</strong> 3-DOF arms, featuring a revolver,
+                  4-bar linkage, and claws
+                </li>
+                <li>
+                  <strong>Function:</strong> utonomously launches 4 custom darts
+                  within 30s
+                </li>
+              </ul>
+            </div>
+            <div class="robot-image-col">
+              <img
+                src="/images/DartRobot.png"
+                alt="Dart System"
+                class="robot-img"
+              />
+            </div>
+          </article>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- Site Footer -->
