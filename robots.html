@@ -47,16 +47,17 @@
               <h2 class="robot-name">Infantry Robot</h2>
               <p class="robot-desc">
                 The Infantry-class robot is the foundational robot for both the
-                1v1 and 3v3 competition categories. It features a 4-wheel swerve
-                drive allowing it to move at maximum speed in any direction
-                while firing 17mm pellets up to speeds of 90 km/h.
+                1v1 and 3v3 competition categories. It features a 4-wheel
+                X-Drive drive allowing it to move at maximum speed in any
+                direction while firing 17mm pellets up to speeds of 90 km/h.
               </p>
               <ul class="robot-specs">
                 <li>
                   <strong>Drive:</strong> Compact X-drive wheel pod design
                 </li>
                 <li>
-                  <strong>Armament:</strong> Refined pogo pin turret connection
+                  <strong>Armament:</strong> Modular turret with articulated
+                  gooseneck
                 </li>
                 <li>
                   <strong>Supercapacitor Bank:</strong> Provides bursts of
@@ -90,10 +91,12 @@
               </p>
               <ul class="robot-specs">
                 <li>
-                  <strong>Ball Path:</strong> Gooseneck to reduce ball path
-                  length
+                  <strong>Ball Path:</strong> Gooseneck to prevent jams at all
+                  firing angles
                 </li>
-                <li><strong>Indexor:</strong> Aggressively fast corkscrew</li>
+                <li>
+                  <strong>Indexor:</strong> Robust centre-fed corkscrew design
+                </li>
                 <li>
                   <strong>Turret:</strong> Barrel geometry that centers balls in
                   flywheel assembly
@@ -153,16 +156,12 @@
               </p>
               <ul class="robot-specs">
                 <li>
-                  <strong>Navigation:</strong> Using ROS2 and the Manifold Tech
+                  <strong>Navigation:</strong> Using NAV2 and the Manifold Tech
                   Odin 1 LIDAR
                 </li>
                 <li>
-                  <strong>Targeting:</strong> Pitch & yaw calculations for
-                  armour panel tracking and aiming
-                </li>
-                <li>
-                  <strong>Algorithms:</strong> Predictive aiming & shooting with
-                  EKF
+                  <strong>Targeting: Uses PnP and EKF to track and
+                  predictively aim at armour plates
                 </li>
               </ul>
               <p class="robot-ranking">
