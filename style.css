@@ -506,28 +506,50 @@ h1.page-title {
   font-weight: 400;
 }
 
-/* Responsive Stacking for Tablets & Mobile */
-@media (max-width: 860px) {
+/* Mobile Responsive Fix for Alternating Showcase */
+@media (max-width: 768px) {
+  .split-showcase-section {
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Force both standard and .reverse rows to stack identically on mobile */
   .split-row,
   .split-row.reverse {
-    flex-direction: column;
-    min-height: auto;
+    display: flex;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
   }
 
-  .split-col {
-    flex: 0 0 100%;
-    width: 100%;
-  }
-
-  .split-image-col {
-    height: 320px;
-  }
-
+  /* Reset column widths and fixed heights so text never gets clipped */
+  .split-col,
+  .split-image-col,
   .split-text-col {
-    padding: 3.5rem 1.75rem;
+    width: 100% !important;
+    flex: 1 1 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* Keep images proportional without overlapping text */
+  .split-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: cover;
+  }
+
+  /* Give the text container breathing room on mobile screens */
+  .split-text-inner {
+    padding: 2rem 1.5rem;
+    height: auto;
   }
 }
-
 /* =========================================
    JOIN US PAGE HERO
    ========================================= */
